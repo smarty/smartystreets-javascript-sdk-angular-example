@@ -1,3 +1,3 @@
 # smartystreets-javascript-sdk-angular-example
 
-An example of using the javascript sdk with angularjs
+Examples of using the javascript sdk with angularjs

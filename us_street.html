@@ -10,16 +10,14 @@
     <h3>SmartyStreets Single US Address Lookup</h3>
     <ul>
       <li>
-        website key : <input ng-model="auth.websiteKey" />
+        SmartyStreets website key : <input ng-model="auth.websiteKey" />
       </li>
       <li ng-repeat="input in inputs">
       <span>{{input.name}} : </span>
         <input type="text" ng-model="input.value" />
       </li>
     </ul>
-    <button ng-click="SmartyStreetsCall(inputs, auth)">
-        Submit
-      </button>
+    <button ng-click="SmartyStreetsCall(inputs, auth)">Fix</button>
   </div>
 </body>
 </html>

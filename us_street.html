@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+  <script src="https://d79i1fxsrar4t.cloudfront.net/sdk/1.1.3/smartystreets-sdk-1.1.3.js"></script>
+  <script src="us_street.js"></script>
+</head>
+<body>
+  <div ng-app="usStreet" ng-controller="usStreetCtrl">
+    <h3>SmartyStreets Single US Address Lookup</h3>
+    <ul>
+      <li>
+        website key : <input ng-model="auth.websiteKey" />
+      </li>
+      <li ng-repeat="input in inputs">
+      <span>{{input.name}} : </span>
+        <input type="text" ng-model="input.value" />
+      </li>
+    </ul>
+    <button ng-click="SmartyStreetsCall(inputs, auth)">
+        Submit
+      </button>
+  </div>
+</body>
+</html>

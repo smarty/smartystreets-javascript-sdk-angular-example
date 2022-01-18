@@ -1,7 +1,7 @@
 angular.module('usStreet', [])
 .controller('usStreetCtrl',function($scope) {
   $scope.auth = {
-    // Get the website key value from one of your API keys on your SmartyStreets account page. 
+    // Get the website key value from one of your API keys on your Smarty account page.
     // Make sure the key has a host name that matches the URL or IP Address you are calling it from.
     websiteKey: ""
   };
@@ -24,15 +24,15 @@ angular.module('usStreet', [])
     }
   ];
 
-  $scope.SmartyStreetsCall = function(inputs, auth) {
+  $scope.SmartyCall = function(inputs, auth) {
     // set up the client with the website key
-    var SmartyStreetsCore = SmartyStreetsSDK.core;
-    var websiteKey = new SmartyStreetsCore.SharedCredentials(auth.websiteKey);
-    var clientBuilder = new SmartyStreetsCore.ClientBuilder(websiteKey);
+    var SmartyCore = SmartySDK.core;
+    var websiteKey = new SmartyCore.SharedCredentials(auth.websiteKey);
+    var clientBuilder = new SmartyCore.ClientBuilder(websiteKey);
     var client = clientBuilder.buildUsStreetApiClient();
 
     // create the lookup
-    var Lookup = SmartyStreetsSDK.usStreet.Lookup;
+    var Lookup = SmartySDK.usStreet.Lookup;
     var lookup = new Lookup();
 
     // assign values to the lookup
@@ -42,7 +42,7 @@ angular.module('usStreet', [])
     lookup.zipCode = inputs[3].value;
 
     // create a new batch and add the lookup to it
-    var batch = new SmartyStreetsCore.Batch();
+    var batch = new SmartyCore.Batch();
     batch.add(lookup);
 
     // send the batch

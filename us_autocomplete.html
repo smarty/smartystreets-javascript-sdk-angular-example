@@ -7,16 +7,16 @@
 </head>
 <body>
   <div ng-app="usAutocomplete" ng-controller="usAutocompleteCtrl">
-    <h3>SmartyStreets US Autocomplete Lookup</h3>
+    <h3>Smarty US Autocomplete Lookup</h3>
     <ul>
       <li>
-        SmartyStreets website key : <input ng-model="auth.websiteKey" />
+        Smarty website key : <input ng-model="auth.websiteKey" />
       </li>
       <li>
         address : <input ng-model="input.value" />
       </li>
     </ul>
-    <button ng-click="SmartyStreetsCall(input, auth)">Get Autocomplete Suggestions</button>
+    <button ng-click="SmartyCall(input, auth)">Get Autocomplete Suggestions</button>
     <div ng-repeat="suggestion in suggestions">
       {{suggestion.text}}
     </div>

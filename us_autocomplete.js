@@ -1,7 +1,7 @@
 angular.module('usAutocomplete', [])
 .controller('usAutocompleteCtrl',function($scope) {
   $scope.auth = {
-    // Get the website key value from one of your API keys on your SmartyStreets account page. 
+    // Get the website key value from one of your API keys on your Smarty account page.
     // Make sure the key has a host name that matches the URL or IP Address you are calling it from.
     websiteKey: ""
   };
@@ -12,15 +12,15 @@ angular.module('usAutocomplete', [])
 
   $scope.suggestions = [];
 
-  $scope.SmartyStreetsCall = function(input, auth) {
+  $scope.SmartyCall = function(input, auth) {
     // set up the client with the website key
-    var SmartyStreetsCore = SmartyStreetsSDK.core;
-    var websiteKey = new SmartyStreetsCore.SharedCredentials(auth.websiteKey);
-    var clientBuilder = new SmartyStreetsCore.ClientBuilder(websiteKey);
+    var SmartyCore = SmartySDK.core;
+    var websiteKey = new SmartyCore.SharedCredentials(auth.websiteKey);
+    var clientBuilder = new SmartyCore.ClientBuilder(websiteKey);
     var client = clientBuilder.buildUsAutocompleteClient();
 
     // create the lookup
-    var Lookup = SmartyStreetsSDK.usAutocomplete.Lookup;
+    var Lookup = SmartySDK.usAutocomplete.Lookup;
     var lookup = new Lookup(input.value);
 
     // send the lookup

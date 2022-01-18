@@ -7,17 +7,17 @@
 </head>
 <body>
   <div ng-app="usStreet" ng-controller="usStreetCtrl">
-    <h3>SmartyStreets Single US Address Lookup</h3>
+    <h3>Smarty Single US Address Lookup</h3>
     <ul>
       <li>
-        SmartyStreets website key : <input ng-model="auth.websiteKey" />
+        Smarty website key : <input ng-model="auth.websiteKey" />
       </li>
       <li ng-repeat="input in inputs">
       <span>{{input.name}} : </span>
         <input type="text" ng-model="input.value" />
       </li>
     </ul>
-    <button ng-click="SmartyStreetsCall(inputs, auth)">Fix</button>
+    <button ng-click="SmartyCall(inputs, auth)">Fix</button>
   </div>
 </body>
 </html>
